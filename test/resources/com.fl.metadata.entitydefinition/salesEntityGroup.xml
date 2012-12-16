@@ -1,0 +1,33 @@
+<sales xmlns="com.fl.metadata.entitydefinition" label="Sales">
+	<SalesTransaction label="Sales Transaction">
+		<id type="string"/> <!-- This is the key. Assume all entities have key field named id. -->
+		<date type="date"/>
+		<comments type="json"/>
+		<store type="ref">
+			<refEntity>sales.Store</refEntity> <!-- sales. is optional. By default it goes to the same entityGroup-->
+		</store>
+		<totalAmount component="finance.currency"/>
+		<item multivalued="true">
+			<product type="ref">
+				<refEntity>Product</refEntity>
+			</product>
+			<quantity type="int"/>
+			<price component="finance.currency"/>
+		</item>
+		<customerSurvey>
+			<item multivalued="true">
+				<question type="string" />
+				<answer type="string" />
+			</item>
+		</customerSurvey>
+	</SalesTransaction>
+
+	<product label="Product">
+		<id type="string"/>
+		<sku type="string" unique="true">
+		</sku>
+		<name type="string"/>
+		<description type="string"/>
+	</product>
+
+</sales>

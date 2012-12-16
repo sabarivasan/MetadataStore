@@ -1,0 +1,9 @@
+<entityGroup xmlns="com.fl.metadata.entitydefinition" name="finance">
+<!-- components are repeatable field groups (like address) which don't get their own persistence -->
+	<currency type="component">
+		<symbol type="string" default="USD"/>
+		<amount type="real">
+			<precision>2</precision> <!-- default precision is 6.  -->
+		</amount>
+	</currency>
+</entityGroup>
